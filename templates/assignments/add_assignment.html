@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header">
+            <h3>Yeni Zimmet Ver</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <!-- Ürün Seç -->
+                <div class="mb-3">
+                    <label>Ürün Seç</label>
+                    <select name="product_id" class="form-control" required>
+
+                        {% for p in products %}
+                        <option value="{{ p.id }}">
+                            {{ p.name }} (Stok: {{ p.stock }})
+                        </option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+
+                <!-- Personel Seç -->
+                <div class="mb-3">
+                    <label>Personel Seç</label>
+                    <select name="employee_id" class="form-control" required>
+
+                        {% for e in employees %}
+                        <option value="{{ e.id }}">
+                            {{ e.fullname }}
+                        </option>
+                        {% endfor %}
+
+                    </select>
+                </div>
+
+                <!-- Tarih -->
+                <div class="mb-3">
+                    <label>Tarih</label>
+                    <input type="date" name="assigned_date" class="form-control" required>
+                </div>
+
+                <button class="btn btn-success">
+                    Zimmet Ver
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

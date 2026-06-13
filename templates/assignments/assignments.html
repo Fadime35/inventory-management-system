@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Zimmetler{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="d-flex justify-content-between mb-3">
+
+        <h2>Zimmet Listesi</h2>
+
+        <a href="/assignments/add" class="btn btn-success">
+            Yeni Zimmet Ver
+        </a>
+
+    </div>
+
+    <table class="table table-bordered table-striped">
+
+        <thead class="table-dark">
+
+            <tr>
+                <th>ID</th>
+                <th>Ürün</th>
+                <th>Personel</th>
+                <th>Tarih</th>
+                <th>Durum</th>
+                <th>İşlem</th>
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            {% for a in assignments %}
+
+            <tr>
+
+                <td>{{ a.id }}</td>
+
+                <!-- 🔥 ARTIK GERÇEK İSİM -->
+                <td>{{ a.product.name }}</td>
+
+                <td>{{ a.employee.fullname }}</td>
+
+                <td>{{ a.assigned_date }}</td>
+
+                <td>{{ a.status }}</td>
+
+                <td>
+
+                    {% if a.status == "Aktif" %}
+
+                    <a href="/assignments/return/{{ a.id }}"
+                       class="btn btn-warning btn-sm">
+                        İade Al
+                    </a>
+
+                    {% endif %}
+
+                </td>
+
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+
+    </table>
+
+</div>
+
+{% endblock %}

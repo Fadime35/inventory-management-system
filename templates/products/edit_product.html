@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Ürün Düzenle{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header">
+            <h3>Ürün Güncelle</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+                    <label>Ürün Adı</label>
+                    <input type="text"
+                           name="name"
+                           value="{{ product.name }}"
+                           class="form-control"
+                           required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Kategori</label>
+                    <input type="text"
+                           name="category"
+                           value="{{ product.category }}"
+                           class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Marka</label>
+                    <input type="text"
+                           name="brand"
+                           value="{{ product.brand }}"
+                           class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Model</label>
+                    <input type="text"
+                           name="model"
+                           value="{{ product.model }}"
+                           class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Seri No</label>
+                    <input type="text"
+                           name="serial_no"
+                           value="{{ product.serial_no }}"
+                           class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Stok</label>
+                    <input type="number"
+                           name="stock"
+                           value="{{ product.stock }}"
+                           class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    Güncelle
+                </button>
+
+                <a href="/products" class="btn btn-secondary">
+                    Geri Dön
+                </a>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

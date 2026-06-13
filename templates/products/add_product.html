@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% block title %}Yeni Ürün{% endblock %}
+
+{% block content %}
+
+<div class="container mt-4">
+
+    <div class="card shadow">
+
+        <div class="card-header">
+            <h3>Yeni Ürün Ekle</h3>
+        </div>
+
+        <div class="card-body">
+
+            <form method="POST">
+
+                <div class="mb-3">
+                    <label>Ürün Adı</label>
+                    <input type="text"
+                           name="name"
+                           class="form-control"
+                           required>
+                </div>
+
+                <div class="mb-3">
+                    <label>Kategori</label>
+                    <input type="text"
+                           name="category"
+                           class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Marka</label>
+                    <input type="text"
+                           name="brand"
+                           class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Model</label>
+                    <input type="text"
+                           name="model"
+                           class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Seri No</label>
+                    <input type="text"
+                           name="serial_no"
+                           class="form-control">
+                </div>
+
+                <div class="mb-3">
+                    <label>Stok</label>
+                    <input type="number"
+                           name="stock"
+                           class="form-control">
+                </div>
+
+                <button class="btn btn-success">
+                    Kaydet
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
