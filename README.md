@@ -148,7 +148,5 @@ Bu proje, Flask + MySQL kullanılarak geliştirilmiş mini bir ERP / envanter y�
 
 ![Assignments](screenshots/assignments.png)
 
-### Zimmet Yönetimi
 
-![Assignments](screenshots/assignments1.png)
 
